@@ -5,7 +5,10 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   runApp(MyApp());
   await Firebase.initializeApp();
-  FirebaseFirestore.instance.collection("col").doc("doc").delete();
+  FirebaseFirestore.instance
+      .collection("mensagens")
+      .doc()
+      .set({'from': 'Carlos', 'text': 'tudo bem também'});
 }
 
 class MyApp extends StatelessWidget {
