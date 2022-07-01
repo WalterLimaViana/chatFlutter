@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   runApp(MyApp());
+  // await Firebase.initializeApp();
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Chat Flutter',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.blueAccent),
+      theme: ThemeData(
+        primaryColor: Colors.blueAccent,
+        iconTheme: IconThemeData(
+          color: Colors.blueAccent,
+        ),
+      ),
       home: ChatScreen(),
     );
   }
