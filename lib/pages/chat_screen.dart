@@ -11,9 +11,11 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final db = FirebaseFirestore.instance;
+
   void _sendMessage(String text) {
     // FirebaseFirestore.instance.collection('messages').add({'text': text});
-    FirebaseFirestore.instance.collection("messages").doc().set({'text': text});
+    db.collection("messages").doc().set({'text': text});
   }
 
   @override
@@ -31,6 +33,7 @@ class _ChatScreenState extends State<ChatScreen> {
           TextComposer(
             sendMessage: (text) {
               _sendMessage;
+              print(text);
             },
           ),
         ],
